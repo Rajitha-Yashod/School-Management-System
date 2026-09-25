@@ -11,8 +11,8 @@ public class School {
 
     private List<Teacher> teachers;
     private List<Student> students;
-    private static   int totalMoneyEarned;
-    private static int totalMoneySpent;
+    private int totalMoneyEarned;
+    private int totalMoneySpent;
 
     /**
      * Create a new school.
@@ -25,8 +25,8 @@ public class School {
     public School(List<Teacher> teachers, List<Student> students) {
         this.teachers = teachers;
         this.students = students;
-        totalMoneyEarned =0;
-        totalMoneySpent =0;
+        this.totalMoneyEarned = 0;
+        this.totalMoneySpent = 0;
     }
 
     /**
@@ -74,10 +74,10 @@ public class School {
 
     /**
      *
-     * @param MoneyEarned = new earned money amount
+     * @param moneyEarned = amount of money earned right now
      */
-    public static void  updateMoneyEarned(int MoneyEarned) {
-        totalMoneyEarned += MoneyEarned;
+    public void updateMoneyEarned(int moneyEarned) {
+        totalMoneyEarned += moneyEarned;
     }
 
     /**
@@ -90,9 +90,17 @@ public class School {
 
     /**
      *
-     * @param MoneySpent = spent money amount of now
+     * @param moneySpent = amount of money spent right now
      */
-    public static void updateTotalMoneySpent(int MoneySpent) {
-        totalMoneyEarned -= MoneySpent;
+    public void updateTotalMoneySpent(int moneySpent) {
+        totalMoneySpent += moneySpent;
+    }
+
+    /**
+     *
+     * @return the money the school is holding, earned minus spent
+     */
+    public int getBalance() {
+        return totalMoneyEarned - totalMoneySpent;
     }
 }

@@ -38,11 +38,12 @@ public class Student {
 
     /**
      *
+     * @param school = the school that collects the money
      * @param fees = fees that the student is pay now.
      */
-    public void payFees(int fees){
+    public void payFees(School school, int fees){
         feesPaid += fees;
-        School.updateMoneyEarned(feesPaid);
+        school.updateMoneyEarned(fees);
 
     }
 

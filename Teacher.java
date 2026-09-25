@@ -55,9 +55,14 @@ public class Teacher {
         return salary;
     }
 
-    public void receivedSalary(int salary){
+    /**
+     *
+     * @param school = the school that pays the salary
+     * @param salary = the amount paid to the teacher now
+     */
+    public void receivedSalary(School school, int salary){
         salaryEarned+= salary;
-        School.updateTotalMoneySpent(salaryEarned);
+        school.updateTotalMoneySpent(salary);
 
     }
 
